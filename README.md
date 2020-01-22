@@ -16,6 +16,4 @@ Assignment 4: Sometimes classes are composed with entities that are not expressi
 
 Assignment 5: Abstract both classes into a vehicle class. Should this class be abstract or not? Figure out what methods and properties should go in the vehicle class and what should stay in the car and bicycle class.
 
-Assignment 6: Test in your main class if you can use polymorphism, e.g., create a vehicle object and assign it to a car, test something and then assign it to a bicycle.
-
 To submit, just push your code to this repository. This work will be due tonight at 6pm.
