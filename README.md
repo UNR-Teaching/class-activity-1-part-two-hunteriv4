@@ -1,3 +1,5 @@
+## Jacquesne Jones and Brandon Freshour
+
 Class Activity 1 part two
 Your first paired programming problem!
 
