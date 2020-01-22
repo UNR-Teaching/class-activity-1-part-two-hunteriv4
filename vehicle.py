@@ -1,8 +1,9 @@
+from abc import ABC, abstractmethod
 from horn import Horn
 from light import Light
 from wheel import Wheel
 
-class Vehicle:
+class Vehicle(ABC):
     def __init__(self, color=None, nickName=None, owner=None):
         self.wheels = []
         self.light = Light()
@@ -28,3 +29,10 @@ class Vehicle:
             elif self.direction < 0:
                 self.direction += 360
     
+    @abstractmethod
+    def faster(self, amount):
+        pass
+
+    @abstractmethod
+    def slower(self, amount):
+        pass

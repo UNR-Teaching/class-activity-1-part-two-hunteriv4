@@ -9,16 +9,22 @@ class Bicycle(Vehicle):
 
     def kickstand(self):
         self.kickstand_down = not self.kickstand_down
-    
-    def pedal(self, rpm):
-        if self.kickstand_down and rpm > 0:
-            print("You fall over!")
-            self.on_ground = True
-        else:
-            self.rpm = rpm
 
     def pick_up(self):
         self.on_ground = False
+    
+    def faster(self, amount):
+        if self.kickstand_down and amount > 0:
+            print("You fall over!")
+            self.on_ground = True
+        else:
+            self.rpm += amount
+
+    def slower(self, amount):
+        if self.rpm <= 0:
+            print("You are stopped...")
+        else:
+            self.rpm -= amount
 
 def main():
     print("Creating bicycle...")
