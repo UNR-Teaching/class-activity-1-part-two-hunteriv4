@@ -1,17 +1,19 @@
-class Car:
-    def __init__(self, color=None, nickName=None, owner=None):
-        self.color = color
-        self.nickName = nickName
-        self.owner = owner
+from engine import Engine
+from vehicle import Vehicle
+
+class Car(Vehicle):
+    def __init__(self, color, nickName, owner):
+        super().__init__(color, nickName, owner)
+        self.engine = Engine()
         self.started = False
         self.throttle = 0
         self.direction = 0
 
     def start(self):
-        self.started = True
+        self.engine.start()
 
     def stop(self):
-        self.started = False
+        self.engine.stop()
 
     def throttle(self, pressure=0):
         if self.started:

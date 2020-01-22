@@ -1,10 +1,9 @@
-class Bicycle:
-    def __init__(self, color=None, nickName=None, owner=None):
-        self.color = color
-        self.nickName = nickName
-        self.owner = owner
+from vehicle import Vehicle
+
+class Bicycle(Vehicle):
+    def __init__(self, color, nickName, owner):
+        super().__init__(color, nickName, owner)
         self.rpm = 0
-        self.direction = 0
         self.kickstand_down = True
         self.on_ground = False
 
@@ -20,14 +19,6 @@ class Bicycle:
 
     def pick_up(self):
         self.on_ground = False
-
-    def turn(self, turn_degrees=0):
-        if not self.on_ground:
-            self.direction += turn_degrees
-            if self.direction >= 360:
-                self.direction -= 360
-            elif self.direction < 0:
-                self.direction += 360
 
 def main():
     print("Creating bicycle...")
